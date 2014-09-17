@@ -1,0 +1,4 @@
+agents/*
+!agents/0
+domains/*
+!domains/0
