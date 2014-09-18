@@ -141,9 +141,9 @@ else {
                 if($SQL->db_error != "") {
 ?>
 <script>
-alert("<?=$SQL->db_error?>")
+alert("<?php echo $SQL->db_error; ?>")
 </script>
-<?
+<?php
                 }
         }
 }

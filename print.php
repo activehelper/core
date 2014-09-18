@@ -20,7 +20,7 @@ else {
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title><?php echo($livehelp_name); ?></title>
-<link href="<?= $install_directory ?>/style/styles.php" rel="stylesheet" type="text/css">
+<link href="<?php echo $install_directory; ?>/style/styles.php" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" onLoad="parent.printFrame.focus();window.print();">
 <table width="100%" border="0" align="center">

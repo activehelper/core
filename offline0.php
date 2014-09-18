@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('import/constants.php');
 if (!isset($_SERVER['DOCUMENT_ROOT'])){ $_SERVER['DOCUMENT_ROOT'] = ''; }
 if (!isset($_REQUEST['TITLE'])){ $_REQUEST['TITLE'] = ''; }
@@ -38,11 +38,11 @@ else {
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title><?php echo($livehelp_name); ?></title>
-<link href="<?=$install_directory?>/style/styles.php" rel="stylesheet" type="text/css">
+<link href="<?php echo $install_directory; ?>/style/styles.php" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
 .background {
- /*       background-image: url(./i18n/<?=LANGUAGE_TYPE?>/pictures/background.gif);
+ /*       background-image: url(./i18n/<?php echo LANGUAGE_TYPE; ?>/pictures/background.gif);
    */     background-repeat: no-repeat;
         background-position: right top;
         margin-left: 0px;
@@ -53,7 +53,7 @@ else {
 </head>
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" class="background">
 <div align="center"><br>
-<h2><?=$Offline_msg_from_email?></h2>
+<h2><?php echo $Offline_msg_from_email; ?></h2>
 </div>
 </body>
 </html>

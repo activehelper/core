@@ -189,6 +189,6 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 ?><Login xmlns="urn:LiveHelp" ID="<?php echo($operator_login_id);?>" Version="<?php echo($web_application_version);?>" Name="<?php echo(xmlinvalidchars($current_first_name . ' ' . $current_last_name));?>" Access="<?php echo($current_privilege);?>">
 <services xmlns="urn: eserver ">
 </services>
-<id_service><?=$_SESSION["services"]?></id_service>
+<id_service><?php echo $_SESSION["services"]; ?></id_service>
 </Login>
 

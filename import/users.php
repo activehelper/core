@@ -212,7 +212,7 @@ if (is_array($rows))
          $messages = 0;
 
 ?>
-                <User ID='<?php echo($login_id);?>' Messages='<?php echo($messages);?>' Status='<?php echo($status);?>' services='<?=$services?>'>
+                <User ID='<?php echo($login_id);?>' Messages='<?php echo($messages);?>' Status='<?php echo($status);?>' services='<?php echo $services; ?>'>
                 <?php echo($username);?>
                 </User>
 <?php
@@ -265,8 +265,8 @@ if (is_array($rows) && $sessions_set != "")
                         <?php echo($username);
 ?>
                         <id_service>1</id_service>
-                        <email><?=$email?></email>
-                        <language><?=$user_language?></language>
+                        <email><?php echo $email; ?></email>
+                        <language><?php echo $user_language; ?></language>
                 </User>
 <?php
       }
@@ -310,8 +310,8 @@ if (is_array($rows) && ($sessions_set != ""))
 ?>
                 <User ID='<?php echo($login_id);?>' id_request='<?php echo($request_id);?>'>
                         <id_service>1</id_service>
-                        <email><?=$row['email']?></email>
-                        <language><?=$user_language?></language>
+                        <email><?php echo $row['email']; ?></email>
+                        <language><?php echo $user_language; ?></language>
                         <?php echo($username);
 ?>
                 </User>
