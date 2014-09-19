@@ -507,7 +507,7 @@ if ($active == 0 && $chatting == 0) {
         if ($waiting > $guest_login_timeout) {
 ?>
 if (top.displayFrame.displayContentsFrame) {
-        top.displayFrame.displayContentsFrame.location.href = '<?php echo $install_directory ?>/waiting.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domain_id);?>';
+        top.displayFrame.displayContentsFrame.location.href = '<?php echo $install_directory; ?>/waiting.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domain_id);?>';
 }
 <?php
         }

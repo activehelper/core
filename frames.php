@@ -271,7 +271,7 @@ textarea { background-color: #f8f8f8; border:1px solid #d4d4d4; border-radius:5p
 </style>
 <link href="style/styles.php?URL=<?php echo urlencode( $URL ); ?><?php echo('&DOMAINID='.$domain_id); ?>" rel="stylesheet" type="text/css">
 </head>
-<body text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" onLoad="preloadImages('<?php echo $install_directory; ?>./domains/<?php echo($domain_id);?>/i18n/<?php echo(LANGUAGE_TYPE); ?>/pictures/send_hover.gif'); LoadMessages();" onUnload="windowLogout();" onBeforeUnload="windowLogout();" oncontextmenu="return true;"  bottommargin="0">
+<body text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" onLoad="preloadImages('<?php echo $install_directory; ?>./domains/<?php echo($domain_id); ?>/i18n/<?php echo(LANGUAGE_TYPE); ?>/pictures/send_hover.gif'); LoadMessages();" onUnload="windowLogout();" onBeforeUnload="windowLogout();" oncontextmenu="return true;"  bottommargin="0">
 <div class="background">
 <div style="POSITION: absolute; LEFT: 18px; TOP: 19px;">
     <table width="350" border="0" cellpadding="0" cellspacing="0" style="background-color: #f8f8f8; border:1px solid #d4d4d4; border-radius:0">
@@ -285,7 +285,7 @@ textarea { background-color: #f8f8f8; border:1px solid #d4d4d4; border-radius:5p
     </table>
 </div>
 <div style="POSITION: absolute; LEFT: 375px; TOP: 30px;">
-    <p style="margin: 0 0 20px;"><a href="logout.php?client_domain_id=<?php echo($domain_id);?>&URL=<?php echo($_REQUEST['URL']); ?>&LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domain_id); ?>" onClick="manualLogout();" target="_top" class="normlink" style="font-weight:700; text-decoration: underline;"><?php echo($logout_label); ?></a></p>
+    <p style="margin: 0 0 20px;"><a href="logout.php?client_domain_id=<?php echo($domain_id); ?>&URL=<?php echo($_REQUEST['URL']); ?>&LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domain_id); ?>" onClick="manualLogout();" target="_top" class="normlink" style="font-weight:700; text-decoration: underline;"><?php echo($logout_label); ?></a></p>
       
 </div>
 

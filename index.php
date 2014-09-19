@@ -515,7 +515,7 @@ span.select { background: url(./pictures/skins/<?php echo($chat_background_img);
                 <td><?php echo($enter_guest_details_label); ?></td>
             </tr>
             <tr>
-                <td class="subheader"><?php echo($else_send_message_label); ?> <a href="offline.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?php echo urlencode( $_REQUEST['URL']); ?><?php echo('&DOMAINID='.$domain_id.'&LANGUAGE='.LANGUAGE_TYPE); ?>" class="normlink"><?php echo($offline_message_label); ?></a></td>
+                <td class="subheader"><?php echo($else_send_message_label); ?> <a href="offline.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?php echo urlencode( $_REQUEST['URL']); ?><?php echo('&DOMAINID='.$domain_id.'&LANGUAGE='.LANGUAGE_TYPE);?>" class="normlink"><?php echo($offline_message_label); ?></a></td>
             </tr>
             <tr>
                 <td>
@@ -666,7 +666,7 @@ if ($_REQUEST['COOKIE'] != '') {
         $cookie_domain = $_REQUEST['COOKIE'];
 ?>
                                 <input name="COOKIE" type="hidden" value="<?php echo($cookie_domain); ?>">
-<?php
+<?php 
 }
     
 ?>

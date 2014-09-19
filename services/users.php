@@ -284,7 +284,7 @@ if (is_array($rows) && $sessions_set != "")
                         <?php echo($username);
 ?>
                         <id_service>1</id_service>
-                        <email><?php echo $email;?></email>
+                        <email><?php echo $email; ?></email>
                         <language><?php echo $user_language; ?></language>
                 </User>
 <?php

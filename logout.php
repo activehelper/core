@@ -299,7 +299,7 @@ window.onload = Custom.init;
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" class="background">
 <div align="center" class="frm_logout">
 <div>
-  <iframe name="printFrame" id="printFrame" src="blank.php?<?php echo('DOMAINID='.$domainId); ?>" frameborder="0" border="0" width="0" height="0" style="visibility: hidden"></iframe>
+  <iframe name="printFrame" id="printFrame" src="blank.php?<?php echo('DOMAINID='.$domainId);?>" frameborder="0" border="0" width="0" height="0" style="visibility: hidden"></iframe>
   <table border="0" align="right" cellpadding="0" cellspacing="0">
     <tr>
       <td>
@@ -320,7 +320,7 @@ if ($complete != '') {
 else {
 ?>
         
-  <form name="rateSession" method="post" action="logout.php?client_domain_id=<?php echo($domain_id);?><?php echo('&DOMAINID='.$domainId); ?>&URL=<?php echo urlencode($_REQUEST['URL']); ?>">
+  <form name="rateSession" method="post" action="logout.php?client_domain_id=<?php echo($domain_id);?><?php echo('&DOMAINID='.$domainId);?>&URL=<?php echo urlencode($_REQUEST['URL']); ?>">
     <div style="padding:0 20px 20px">
     <table border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
