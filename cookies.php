@@ -80,7 +80,7 @@ padding: 15px;
 }
 -->
 </style>
-<link href="./style/styles.php?<?echo('DOMAINID='. ( (int) $domain_id ) );?>" rel="stylesheet" type="text/css">
+<link href="./style/styles.php?<?php echo('DOMAINID='. ( (int) $domain_id ) ); ?>" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/JavaScript">
 <!--
 

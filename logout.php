@@ -134,7 +134,7 @@ if ($send_session == true) {
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title><?php echo($livehelp_name); ?></title>
-<link href="<?=$install_directory?>/style/styles.php?<?echo('DOMAINID='.$domainId);?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $install_directory; ?>/style/styles.php?<?php echo('DOMAINID='.$domainId);?>" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script language="JavaScript" type="text/JavaScript">
@@ -299,7 +299,7 @@ window.onload = Custom.init;
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>" class="background">
 <div align="center" class="frm_logout">
 <div>
-  <iframe name="printFrame" id="printFrame" src="blank.php?<?echo('DOMAINID='.$domainId);?>" frameborder="0" border="0" width="0" height="0" style="visibility: hidden"></iframe>
+  <iframe name="printFrame" id="printFrame" src="blank.php?<?php echo('DOMAINID='.$domainId);?>" frameborder="0" border="0" width="0" height="0" style="visibility: hidden"></iframe>
   <table border="0" align="right" cellpadding="0" cellspacing="0">
     <tr>
       <td>
@@ -311,16 +311,16 @@ window.onload = Custom.init;
  </table>                
   <p align="left" class="title"><b><?php echo($logout_message_label); ?></b></p>
                            
-<?
+<?php
 if ($complete != '') {
 ?>                       
      <p align="left"><strong><?php echo($rating_thank_you_label); ?></strong></p>
-<?
+<?php
 }
 else {
 ?>
         
-  <form name="rateSession" method="post" action="logout.php?client_domain_id=<?php echo($domain_id);?><?echo('&DOMAINID='.$domainId);?>&URL=<?php echo urlencode($_REQUEST['URL']); ?>">
+  <form name="rateSession" method="post" action="logout.php?client_domain_id=<?php echo($domain_id);?><?php echo('&DOMAINID='.$domainId);?>&URL=<?php echo urlencode($_REQUEST['URL']); ?>">
     <div style="padding:0 20px 20px">
     <table border="0" cellspacing="0" cellpadding="0" align="center">
         <tr>
@@ -426,7 +426,7 @@ else {
   ?>
    </div> 
     </table>
-         <input type="Hidden" name="LANGUAGE" value="<?=LANGUAGE_TYPE?>">
+         <input type="Hidden" name="LANGUAGE" value="<?php echo LANGUAGE_TYPE; ?>">
   </form>
   </p>
   <?php

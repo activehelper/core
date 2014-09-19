@@ -56,7 +56,7 @@ function checkSession()
 <Session>
   <status>Invalid session</status>
 </Session>
-<?
+<?php
       exit;
    }
 }
@@ -95,7 +95,7 @@ echo('<?xml version="1.0" encoding="' . $charset . '"?>' . "\n");
   <code>-1</code>
   <description><?php echo($message); ?></description>
 </error>
-<?
+<?php
       exit;
 
 }

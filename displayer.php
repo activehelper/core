@@ -19,7 +19,7 @@ header('Content-type: text/html; charset=' . CHARSET);
 <title><?php echo($livehelp_name); ?></title>
 </head>
 <frameset rows="2,*" frameborder="NO" border="0" framespacing="0">
-  <frame src="./blank.php?<?echo('DOMAINID='.$domainId);?>" name="displayRefreshFrame" scrolling="NO">
-  <frame src="blank.php?LANGUAGE=<?=LANGUAGE_TYPE?><?echo('&DOMAINID='.$domainId);?>" name="displayContentsFrame">
+  <frame src="./blank.php?<?php echo('DOMAINID='.$domainId); ?>" name="displayRefreshFrame" scrolling="NO">
+  <frame src="blank.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domainId); ?>" name="displayContentsFrame">
 </frameset><noframes></noframes>
 </html>

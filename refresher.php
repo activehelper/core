@@ -306,8 +306,8 @@ top.display('', '<?php echo($message_joined); ?>', '2', '1');
         }
 }
 ?>
-top.lastMessageID = "<?=$guest_message?>"
-<?
+top.lastMessageID = "<?php echo $guest_message; ?>"
+<?php
 if ($javascript == false) {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -493,13 +493,13 @@ if ($javascript == false) {
 
 if (!$typingresult || !($active > 0)) {
 ?>
-//alert("<?=$typing."=".$typingresult."=".$active?>")
+//alert("<?php echo $typing."=".$typingresult."=".$active; ?>")
 top.setWaiting();
 <?php
 }
 else {
 ?>
-//alert("<?=$typing."=".$typingresult."=".$active?>")
+//alert("<?php echo $typing."=".$typingresult."=".$active; ?>")
 top.setTyping();
 <?php
 }
@@ -507,7 +507,7 @@ if ($active == 0 && $chatting == 0) {
         if ($waiting > $guest_login_timeout) {
 ?>
 if (top.displayFrame.displayContentsFrame) {
-        top.displayFrame.displayContentsFrame.location.href = '<?= $install_directory ?>/waiting.php?LANGUAGE=<?=LANGUAGE_TYPE?><?php echo('&DOMAINID='.$domain_id);?>';
+        top.displayFrame.displayContentsFrame.location.href = '<?php echo $install_directory; ?>/waiting.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domain_id);?>';
 }
 <?php
         }
