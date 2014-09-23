@@ -81,7 +81,7 @@ if(isset($_REQUEST["sbmt"])) {
 </head>
 <body>
 Offline message was sent!
-<?
+<?php
         } else {
                 $query = "Insert into " . $table_prefix . "webcall (id_webcall, request, Name, Question, Email, Language, Department, country, code, phone, status, request_time) Values ('', '".$request_id."', '".htmlspecialchars( (string) $_REQUEST["name"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["question"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["email"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["language"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["department"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["country"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["code"], ENT_QUOTES )."', '".htmlspecialchars( (string) $_REQUEST["phone"], ENT_QUOTES )."', 0, now())";
                 $webCall_id = $SQL->insertquery($query);
@@ -109,7 +109,7 @@ function update(state) {
         document.getElementById("serviceStatus").innerHTML = state
 }
 </script>
-<?
+<?php
         }
 } else {
 ?>
@@ -120,11 +120,11 @@ function update(state) {
 </head>
 
 <body>
-<?
+<?php
 if($isOffline) {
 ?>
 We are OFFLINE!
-<?
+<?php
 }
 ?>
 Please enter your information below.
@@ -146,26 +146,26 @@ Please enter your information below.
                 <td>Language</td>
                 <td>
                         <select name="language" style="width:175px;filter:alpha(opacity=75);moz-opacity:0.75">
-<?
+<?php
         $query = "SELECT code, name FROM " . $table_prefix . "languages_domain Where Id_domain = " . $domain_id . " Order By name";
         $rows = $SQL->selectall($query);
         foreach ($rows as $key => $row) {
 ?>
-                                <option value="<?=strtolower($row["code"])?>"<?= ($row["code"] == $language ? " selected" : "")?>><?=$row["name"]?>
-<?
+                                <option value="<?php echo strtolower($row["code"]); ?>"<?php echo ($row["code"] == $language ? " selected" : ""); ?>><?php echo $row["name"]; ?>
+<?php
         }
 ?>
                         </select>
                 </td>
         </tr>
-<?
+<?php
         if(!$isOffline) {
 ?>
         <tr>
                 <td>Department</td>
                 <td>
                         <select name="department" style="width:175px;filter:alpha(opacity=75);moz-opacity:0.75">
-<?
+<?php
                 $query = "SELECT DISTINCT u.department FROM " . $table_prefix . "users u, " . $table_prefix . "domain_user du WHERE (UNIX_TIMESTAMP(NOW()) - UNIX_TIMESTAMP(u.refresh)) < '$connection_timeout' AND u.status = '1' And u.id = du.id_user And du.id_domain = " . $domain_id;
                 $rows = $SQL->selectall($query);
 
@@ -182,7 +182,7 @@ Please enter your information below.
                                                                 $distinct_departments[] = $department;
 ?>
                                 <option value="<?php echo($department); ?>"><?php echo($department); ?></option>
-<?
+<?php
                                                         }
                                                 }
                                         } else {
@@ -191,7 +191,7 @@ Please enter your information below.
                                                         $distinct_departments[] = $department;
 ?>
                                 <option value="<?php echo($department); ?>"><?php echo($department); ?></option>
-<?
+<?php
                                                 }
                                         }
                                 }
@@ -201,20 +201,20 @@ Please enter your information below.
                         </select>
                 </td>
         </tr>
-<?
+<?php
         }
 ?>
         <tr>
                 <td>Country</td>
                 <td>
                         <select name="country" id="country">
-<?
+<?php
         $query = "SELECT phone_code, country FROM " . $table_prefix . "countries";
         $rows = $SQL->selectall($query);
         foreach ($rows as $key => $row) {
 ?>
-                                <option value="<?=$row["phone_code"]?>"><?=$row["country"]?> [<?=$row["phone_code"]?>]</option>
-<?
+                                <option value="<?php echo $row["phone_code"]; ?>"><?php echo $row["country"]; ?> [<?php echo $row["phone_code"]; ?>]</option>
+<?php
         }
 ?>
                         </select>
@@ -239,7 +239,7 @@ Please enter your information below.
         </tr>
 </form>
 </table>
-<?
+<?php
 }
 ?>
 </body>

@@ -243,7 +243,7 @@ else {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo($livehelp_name); ?></title>
-<link href="<?= $install_directory ?>/style/styles.php?<?echo('DOMAINID='.$domain_id);?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $install_directory; ?>/style/styles.php?<?php echo('DOMAINID='.$domain_id);?>" rel="stylesheet" type="text/css">
 <script>
 window.resizeTo(490, <?php echo($form_high); ?>);
 </script>
@@ -280,7 +280,7 @@ body { background-color: #f2f2f2;}
 
 </head>
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>">
- <!--img src="./i18n/<?=LANGUAGE_TYPE?>/pictures/background_offline.gif" alt="<?php echo($offline_message_label); ?>" width="309" height="49" style="position: relative; right: -150px; top: 10px;"-->
+ <!--img src="./i18n/<?php echo LANGUAGE_TYPE; ?>/pictures/background_offline.gif" alt="<?php echo($offline_message_label); ?>" width="309" height="49" style="position: relative; right: -150px; top: 10px;"-->
 
 <?php
 
@@ -385,7 +385,7 @@ if($_REQUEST['COMPLETE'] == '' || $error != '' || $invalid_email != '' || $inval
         <td align="left" valign="middle" class="security">
             <p><strong><?php echo($security_code_label); ?>:</strong></p>
             <span style="height: 25px; vertical-align: middle; float:left; margin-right:10px"><input name="SECURITY" type="text" id="SECURITY" value="" size="6" style="width:120px;"/></span>
-            <img src="security.php?URL=<?=urlencode($_REQUEST['URL'])?>" style="float:left"/>
+            <img src="security.php?URL=<?php echo urlencode($_REQUEST['URL']); ?>" style="float:left"/>
         </td>
       </tr>
 <?php

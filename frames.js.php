@@ -229,9 +229,9 @@ function display(username, message, align, status) {
         }
          //alert(message);
                
-         if("<?=$guest_username?>" != username) {
+         if("<?php echo $guest_username; ?>" != username) {
             
-          if ("<?=$sound_alert_new_message?>" != 0 && typeof( Audio ) != "undefined" )
+          if ("<?php echo $sound_alert_new_message; ?>" != 0 && typeof( Audio ) != "undefined" )
             {
                  var snd = new Audio();
                          
@@ -255,11 +255,11 @@ function afterDisplayNew(){
 }
 
 function setTyping() {
-        try { top.document.getElementById('messengerStatus').innerHTML = '<?=$user_typing_gif?>'; } catch (e) {}
+        try { top.document.getElementById('messengerStatus').innerHTML = '<?php echo $user_typing_gif; ?>'; } catch (e) {}
 }
 
 function setWaiting() {
-        try { top.document.getElementById('messengerStatus').innerHTML = '<?=$waiting_gif?>'; } catch (e) {}
+        try { top.document.getElementById('messengerStatus').innerHTML = '<?php echo $waiting_gif; ?>'; } catch (e) {}
 }
 
 function refreshDisplayer() {
@@ -300,8 +300,8 @@ function LoadMessagesFrame() {
         if (top.displayFrame && chatEnded == false) {
                 //
                 top.displayFrame.displayRefreshFrame.document.onload = window.setTimeout('LoadMessagesFrame();', 3000);
-//              alert('<?=$install_directory?>/refresher.php?LANGUAGE=<?=LANGUAGE_TYPE?>&DOMAINID=<?php echo( (int) $domain_id ); ?>&URL=<?= urlencode( $URL ) ?>&lastMessageID=' + lastMessageID);
-                top.displayFrame.displayRefreshFrame.location.href = '<?=$install_directory?>/refresher.php?DOMAINID=<?php echo( (int) $domain_id ); ?>&LANGUAGE=<?=LANGUAGE_TYPE?>&URL=<?= urlencode( $URL ) ?>&lastMessageID=' + lastMessageID;
+//              alert('<?php echo $install_directory; ?>/refresher.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?>&DOMAINID=<?php echo( (int) $domain_id ); ?>&URL=<?php echo urlencode( $URL ); ?>&lastMessageID=' + lastMessageID);
+                top.displayFrame.displayRefreshFrame.location.href = '<?php echo $install_directory; ?>/refresher.php?DOMAINID=<?php echo( (int) $domain_id ); ?>&LANGUAGE=<?php echo LANGUAGE_TYPE; ?>&URL=<?php echo urlencode( $URL ); ?>&lastMessageID=' + lastMessageID;
         }
 }
 
@@ -318,7 +318,7 @@ function LoadMessages() {
                 }
 
                 var time = currentTime();
-                var URL = '<?=$install_directory?>/refresher.php?LANGUAGE=<?=LANGUAGE_TYPE?>&DOMAINID=<?php echo( (int) $domain_id ); ?>&JS=1&TYPING=' + currentlyTyping + '&INIT=' + initalisedChat + '&COOKIE=<?php echo($cookie_domain); ?>&TIME=' + time + '&URL=<?= urlencode( $URL ) ?>&lastMessageID=' + lastMessageID;
+                var URL = '<?php echo $install_directory; ?>/refresher.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?>&DOMAINID=<?php echo( (int) $domain_id ); ?>&JS=1&TYPING=' + currentlyTyping + '&INIT=' + initalisedChat + '&COOKIE=<?php echo($cookie_domain); ?>&TIME=' + time + '&URL=<?php echo urlencode( $URL ); ?>&lastMessageID=' + lastMessageID;
 //              alert(URL);
                 LiveHelpXMLHTTP.open('GET', URL, true);
 
@@ -362,10 +362,10 @@ function typing(status) {
                         if (intLength == 0) {
                                 typing(false);
                         } else {
-                                updateTypingStatus.src = '<?=$install_directory?>/typing.php?ID=<?php echo($login_id); ?>&STATUS=1&TIME=' + time;
+                                updateTypingStatus.src = '<?php echo $install_directory; ?>/typing.php?ID=<?php echo($login_id); ?>&STATUS=1&TIME=' + time;
                         }
                 } else {
-                        updateTypingStatus.src = '<?=$install_directory?>/typing.php?ID=<?php echo($login_id); ?>&STATUS=0&TIME=' + time;
+                        updateTypingStatus.src = '<?php echo $install_directory; ?>/typing.php?ID=<?php echo($login_id); ?>&STATUS=0&TIME=' + time;
                 }
         }
 }

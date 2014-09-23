@@ -240,7 +240,7 @@ include_once('import/settings_default.php');
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title><?php echo($livehelp_name); ?></title>
-<link href="<?=$install_directory?>/style/styles.php?<?echo('DOMAINID='.$domain_id);?>" rel="stylesheet" type="text/css">
+<link href="<?php echo $install_directory; ?>/style/styles.php?<?php echo('DOMAINID='.$domain_id); ?>" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script language="JavaScript" type="text/JavaScript">
@@ -411,7 +411,7 @@ function disableForm() {
 }
 
 function chForm() {
-<?
+<?php
 if($require_guest_details == 1) {
 ?>
         if(document.getElementById("USER").value == "") {
@@ -426,7 +426,7 @@ if($require_guest_details == 1) {
                 alert("<?php echo($empty_valid_email_details_label); ?>")
                 return false
         }
-<?
+<?php
 }
 ?>
         disableForm()
@@ -441,19 +441,19 @@ if($require_guest_details == 1) {
 
 <body bgcolor="<?php echo($background_color); ?>" text="<?php echo($font_color); ?>" link="<?php echo($font_link_color); ?>" vlink="<?php echo($font_link_color); ?>" alink="<?php echo($font_link_color); ?>">
 
-<!--<?=CHARSET?>-->
+<!--<?php echo CHARSET; ?>-->
 
-<!--img src="./i18n/<?=LANGUAGE_TYPE?>/pictures/background_online.gif" width="265" height="49" style="position: relative; right: -200px; top: 10px;"-->
-<?
+<!--img src="./i18n/<?php echo LANGUAGE_TYPE; ?>/pictures/background_online.gif" width="265" height="49" style="position: relative; right: -200px; top: 10px;"-->
+<?php
 if ($error == 'email') {
 ?>
 <strong><?php echo($invalid_email_error_label); ?></strong>
-<?
+<?php
 }
 if ($error == 'empty') {
 ?>
 <strong><?php echo($empty_user_details_label); ?></strong>
-<?
+<?php
 }
 ?>
 
@@ -503,7 +503,7 @@ span.select { background: url(./pictures/skins/<?php echo($chat_background_img);
 </style>
 <div class="frm_login background">  
 
-<form name="login" id="login" method="POST" action="frames.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?php echo($_REQUEST['URL']); ?><?echo('&DOMAINID='.$domain_id.'&AGENTID='.$agent_id.'&LANGUAGE='.LANGUAGE_TYPE);?>">
+<form name="login" id="login" method="POST" action="frames.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?php echo($_REQUEST['URL']); ?><?php echo('&DOMAINID='.$domain_id.'&AGENTID='.$agent_id.'&LANGUAGE='.LANGUAGE_TYPE); ?>">
 
     <div style="padding:10px">
     <input type="hidden" name="DOMAINID" value="<?php echo($domain_id); ?>"/>
@@ -515,36 +515,36 @@ span.select { background: url(./pictures/skins/<?php echo($chat_background_img);
                 <td><?php echo($enter_guest_details_label); ?></td>
             </tr>
             <tr>
-                <td class="subheader"><?php echo($else_send_message_label); ?> <a href="offline.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?= urlencode( $_REQUEST['URL']) ?><?echo('&DOMAINID='.$domain_id.'&LANGUAGE='.LANGUAGE_TYPE);?>" class="normlink"><?php echo($offline_message_label); ?></a></td>
+                <td class="subheader"><?php echo($else_send_message_label); ?> <a href="offline.php?SERVER=<?php echo($_REQUEST['SERVER']); ?>&URL=<?php echo urlencode( $_REQUEST['URL']); ?><?php echo('&DOMAINID='.$domain_id.'&LANGUAGE='.LANGUAGE_TYPE);?>" class="normlink"><?php echo($offline_message_label); ?></a></td>
             </tr>
             <tr>
                 <td>
                     <p class="label"><span><?php echo($name_label); ?>:</span></p>
-                    <? if ($username !='') { ?> 
+                    <?php if ($username !='') { ?> 
                       <font face="arial" size="2"><input name="USER" id="USER" type="text" value ="<?php echo($username); ?>"  READONLY ="TRUE"  style="filter:alpha(opacity=75);moz-opacity:0.75" maxlength="20" class="inputbox"/></font>
-                    <? } else { ?>                        
+                    <?php } else { ?>                        
                       <font face="arial" size="2"><input name="USER" id="USER" type="text" style="filter:alpha(opacity=75);moz-opacity:0.75" maxlength="20" class="inputbox"/></font>
-                    <? } ?>
+                    <?php } ?>
                 </td>
             </tr>
             <tr>
                 <td>
                     <p class="label"><span><?php echo($email_label); ?>:</span></p>
                     
-                    <? if ($email !='') { ?>
+                    <?php if ($email !='') { ?>
                         <font face="arial" size="2"><input type="text"  value ="<?php echo($email); ?>" name="EMAIL" id="EMAIL"  READONLY ="TRUE"  style="filter:alpha(opacity=75);moz-opacity:0.75" class="inputbox/></font>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <font face="arial" size="2"><input type="text"  name="EMAIL" id="EMAIL" style="filter:alpha(opacity=75);moz-opacity:0.75" class="inputbox"/></font>
-                    <? } ?>
+                    <?php } ?>
                 </td>
             </tr> 
              <?php if  ($use_phone ==1) { ?>  
              <tr>
                 <td>
                     <p class="label"><span><?php echo($your_phone_label); ?>:</span></p>                        
-                    <? if ($phone !='') { ?>
+                    <?php if ($phone !='') { ?>
                     <font face="arial" size="2"><input type="text" name="PHONE" id="PHONE" style="filter:alpha(opacity=75);moz-opacity:0.75" class="inputbox"/></font>
-                    <? } ?>
+                    <?php } ?>
                 </td>
             </tr> 
               <?php
@@ -555,13 +555,13 @@ span.select { background: url(./pictures/skins/<?php echo($chat_background_img);
              <tr>
                 <td>
                     <p class="label"><span><?php echo($your_company_label); ?>:</span></p>             
-                    <? if ($company !='') { ?>
+                    <?php if ($company !='') { ?>
                     <font face="arial" size="2"><input type="text" name="COMPANY" id="COMPANY" style="filter:alpha(opacity=75);moz-opacity:0.75" class="inputbox"/></font>
-                    <? } ?>
+                    <?php } ?>
                 </td>
             </tr>  
            <?php }  ?>                    
-         <?
+         <?php
          // Languague display option 
          
           $query = "SELECT code, name FROM " . $table_prefix . "languages_domain Where Id_domain = " . $domain_id . " Order By name";
@@ -578,29 +578,29 @@ span.select { background: url(./pictures/skins/<?php echo($chat_background_img);
         */
          ?>        
         
-        <? if ($lang_count > 1 && $disable_language ==0) { ?>
+        <?php if ($lang_count > 1 && $disable_language ==0) { ?>
             
        <tr>
                     <td><p class="label"><span><?php echo($select_language_label); ?>:</span></p>                                                                        
                     <select name="LANGUAGE" class="f_styled">
-<?
+<?php
     $query = "SELECT code, name FROM " . $table_prefix . "languages_domain Where Id_domain = " . $domain_id . " Order By name";
      
     $rows = $SQL->selectall($query);
     
     foreach ($rows as $key => $row) {
 ?>
-                                    <option value="<?=strtolower($row["code"])?>"<?= ($row["code"] == $language ? " selected" : "")?>><?=$row["name"]?>
-<?
+                                    <option value="<?php echo strtolower($row["code"]); ?>"<?php echo ($row["code"] == $language ? " selected" : ""); ?>><?php echo $row["name"]; ?>
+<?php
     }
 ?>
                             </select>
                     </td>
             </tr>
-<? } ?>
+<?php } ?>
    
          
-<?
+<?php
 
 if ($disable_department == true && $department == '' && $installed == true || $error == 'empty')  {
 ?>
@@ -608,7 +608,7 @@ if ($disable_department == true && $department == '' && $installed == true || $e
                 <td>
                 <p class="label"><span><?php echo($department_label); ?>:</span></p>                          
                 <select name="DEPARTMENT"  class="f_styled">
-                <?
+                <?php
                 $query = "SELECT DISTINCT u.department FROM " . $table_prefix . "users u, " . $table_prefix . "domain_user du WHERE (UNIX_TIMESTAMP(NOW()) - UNIX_TIMESTAMP(u.refresh)) < '$connection_timeout' AND u.status = '1' And u.id = du.id_user And du.id_domain = " . $domain_id;
                
                if($agent_id ==0) 
@@ -633,7 +633,7 @@ if ($disable_department == true && $department == '' && $installed == true || $e
                 $distinct_departments[] = $department;
                 ?>
                 <option value="<?php echo($department); ?>"><?php echo($department); ?></option>
-                <?
+                <?php
                 }
                 }
                 } else {
@@ -642,7 +642,7 @@ if ($disable_department == true && $department == '' && $installed == true || $e
                 $distinct_departments[] = $department;
                 ?>
                 <option value="<?php echo($department); ?>"><?php echo($department); ?></option>
-                <?
+                <?php
                 }
                 }
                 }
@@ -652,21 +652,21 @@ if ($disable_department == true && $department == '' && $installed == true || $e
                 </select>
                 </td>
             </tr>                                
-<?
+<?php
 
 } else if (($departments == true) || ($department != '')) {
 ?>
  <input name="DEPARTMENT" type="hidden" value="<?php echo($department); ?>">
-<?
+<?php
 }
 ?>
 
-<?
+<?php
 if ($_REQUEST['COOKIE'] != '') {
         $cookie_domain = $_REQUEST['COOKIE'];
 ?>
                                 <input name="COOKIE" type="hidden" value="<?php echo($cookie_domain); ?>">
-<? 
+<?php 
 }
     
 ?>

@@ -60,7 +60,7 @@ var timer = setTimeout('loadOfflineSupport()', 15000);
             <tr>
               <td><a href="blank.php?<?php echo('DOMAINID='.$domainId);?>" onClick="clearTimeout(timer);" class="normlink"><?php echo($continue_waiting_label); ?></a></td>
               <td>-</td>
-              <td><a href="offline.php?LANGUAGE=<?=LANGUAGE_TYPE?><?php echo('&DOMAINID='.$domainId);?>" target="_top" class="normlink"><?php echo($offline_support_label); ?></a></td>
+              <td><a href="offline.php?LANGUAGE=<?php echo LANGUAGE_TYPE; ?><?php echo('&DOMAINID='.$domainId);?>" target="_top" class="normlink"><?php echo($offline_support_label); ?></a></td>
             </tr>
           </table><br>
           <div align="center"><span class="small"><?php echo($redirecting_label); ?>... </span></div></td>

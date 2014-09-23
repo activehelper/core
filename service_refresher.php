@@ -25,12 +25,12 @@ $webCallId = (int) $_REQUEST["webCallId"];
 <meta http-equiv='Pragma' content='no-cache'><meta http-equiv='expires' content='0'>
 </head>
 <body>
-<?
+<?php
 echo $query = "SELECT s.service_description FROM " . $table_prefix . "webcall wc, " . $table_prefix . "statuses s WHERE wc.id_webcall = '". ( (int) $webCall_id )."' and s.id_status = wc.status And s.id_service = 4";
 $rows = $SQL->selectquery($query);
 ?>
 <script>
-parent.update("<?=$rows["service_description"]?>")
+parent.update("<?php echo $rows["service_description"]; ?>")
 function sf() {
         document.location.reload()
         return true
